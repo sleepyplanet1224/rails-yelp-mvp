@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h1 class="text-center">OK, tell us about your favorite restaurant 🤔</h1>
+
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :category, collection: Restaurant::CATEGORIES.sort, include_blank: false %>
+    <%= f.input :phone_number %>
+    <%= f.submit("Add your 🤍 restaurant!", class: 'btn btn-success')  %>
+  <% end %>
+
+  <div class="mt-3">
+    <p><%= link_to '👈 Back to all restaurants', restaurants_path, class: 'btn btn-secondary' %></p>
+  </div>
+
+</div>
