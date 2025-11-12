@@ -1,9 +1,10 @@
-<div class="container mt-3">
-  <h1>Restaurants</h1>
-  <p><%= link_to '➕ Add your favorite restaurant to this list here!', new_restaurant_path %></p>
+<div class="container my-5">
+  <h1 class="text-center fw-bold">Restaurants</h1>
+  <p class="py-3"><%= link_to '➕ Add your favorite restaurant to this list here!', new_restaurant_path, class: "text-decoration-none" %></p>
 
-  <% @restaurants.each do |restaurant| %>
-    <h2><%= link_to "#{restaurant.name}", restaurant_path(restaurant) %></h2>
-  <% end %>
-
+  <div class="px-5 py-3 my-3 bg-warning-subtle">
+    <% @restaurants.each do |restaurant| %>
+      <h2 class="fw-semibold"><%= link_to "➡️ #{restaurant.name}", restaurant_path(restaurant), class: "text-decoration-none" %></h2>
+    <% end %>
+  </div>
 </div>

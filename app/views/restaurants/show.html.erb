@@ -1,33 +1,29 @@
-<div class="container mt-3">
-  <h1><%= "#{ @restaurant.name }" %></h1>
+<div class="container my-5">
+  <h1 class="text-center fw-bold" ><%= "#{ @restaurant.name }" %></h1>
 
-  <div>
-    <h2>Restaurant Information</h2>
+  <div class="px-5 py-3 my-3 bg-warning-subtle">
+    <h2 class="fw-semibold">Restaurant Information</h2>
     <p>Category: <%= @restaurant.category %></p>
     <p>Address: <%= @restaurant.address %></p>
     <p>Contact: <%= @restaurant.phone_number %></p>
+    <p><%= link_to 'Add your 🤍 restaurant to the list!', new_restaurant_path, class: 'btn btn-success' %></p>
   </div>
 
-  <div>
-    <p>
-      <%= link_to 'Add your 🤍 restaurant to the list!', new_restaurant_path, class: 'btn btn-success' %>
-
-    </p>
-  </div>
-
-  <div class="mt-3">
-    <h3>💭 What others are saying about <%= "#{ @restaurant.name }" %> 🤔</h3>
+  <div class="px-5 py-3 my-3 bg-body-tertiary">
+    <h3 class="fw-semibold">What others are saying about <%= "#{ @restaurant.name }" %> 💭</h3>
 
     <% @restaurant.reviews.each do |review| %>
-      <div class="my-2">
+      <div class="py-2">
         <h2><%= review.rating %></h2>
         <p><%= review.content %></p>
       </div>
     <% end %>
 
-    <h3 class="mt-3">Share your experience with <%= "#{ @restaurant.name }" %> too! ✍️</h3>
+    <h3 class="mt-3 fw-semibold">Share your experience with <%= "#{ @restaurant.name }" %> too! ✍️</h3>
     <p class="mt-3"><%= link_to 'Write your review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary' %></p>
   </div>
 
-  <%= link_to '👈 Back to all restaurants', restaurants_path, class: 'btn btn-secondary' %>
+  <div class="py-3">
+    <p><%= link_to '👈 Back to all restaurants', restaurants_path, class: 'btn btn-secondary' %></p>
+  </div>
 </div>
