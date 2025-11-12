@@ -14,7 +14,7 @@
 
     <% @restaurant.reviews.each do |review| %>
       <div class="py-2">
-        <h2><%= review.rating %></h2>
+        <h2><%= "⭐" * review.rating %></h2>
         <p><%= review.content %></p>
       </div>
     <% end %>
